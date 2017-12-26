@@ -34,7 +34,7 @@
     };
 
     T.defs = $.extend(T.defs, options);
-  }
+  };
 
   //初始化方法
   RoundSlideImg.prototype.init = function () {
@@ -52,7 +52,7 @@
     //wrap的初始位置
     T.slideOffsetArr = T.getSlideOffsetArr();
     T.$items.eq(T.itemLen - 1).insertBefore(T.$items.eq(0));
-    T.$wrap.css({ marginLeft: T.slideOffsetArr[1] + 'px' });
+    T.$wrap.css({marginLeft: T.slideOffsetArr[1] + 'px'});
 
     //绑定点击事件方法调用
     T.bindClick();
@@ -63,9 +63,9 @@
     //窗口尺寸修改时候设置图片距离左侧位置
     $(window).on('resize', function () {
       T.slideOffsetArr = T.updateSlideOffsetArr();
-      T.$wrap.css({ marginLeft: T.slideOffsetArr[1] + 'px' });
+      T.$wrap.css({marginLeft: T.slideOffsetArr[1] + 'px'});
     });
-  }
+  };
 
   //获取第一第二第三张图片展示时距离左侧的位置
   RoundSlideImg.prototype.getSlideOffsetArr = function (winWidth) {
@@ -74,14 +74,16 @@
     var defaultOffsetLeft = (winW - T.$items.eq(0).outerWidth()) / 2;
     var arr = [defaultOffsetLeft];
     var i = 1;
+    var cur;
+    var iWidth;
 
     for (i; i < 3; i += 1) {
-      var cur = T.$items.eq(i);
-      var iWidth = cur.outerWidth();
+      cur = T.$items.eq(i);
+      iWidth = cur.outerWidth();
       arr.push(arr[arr.length - 1] - iWidth);
     }
     return arr;
-  }
+  };
 
   //上一张图片展示
   RoundSlideImg.prototype.goPrev = function () {
@@ -91,10 +93,10 @@
 
     //操作之前的设置
     items.eq(T.itemLen - 1).insertBefore(items.eq(0));
-    T.$wrap.css({ marginLeft: leftOffset[2] + 'px' });
+    T.$wrap.css({marginLeft: leftOffset[2] + 'px'});
 
-    T.$wrap.animate({ marginLeft: leftOffset[1] + 'px' }, 400);
-  }
+    T.$wrap.animate({marginLeft: leftOffset[1] + 'px'}, 400);
+  };
 
   //下一张图片展示
   RoundSlideImg.prototype.goNext = function () {
@@ -104,24 +106,24 @@
 
     //操作之前的设置
     items.eq(0).insertAfter(items.eq(T.itemLen - 1));
-    T.$wrap.css({ marginLeft: leftOffset[0] + 'px' });
+    T.$wrap.css({marginLeft: leftOffset[0] + 'px'});
 
-    T.$wrap.animate({ marginLeft: leftOffset[1] + 'px' }, 400);
-  }
+    T.$wrap.animate({marginLeft: leftOffset[1] + 'px'}, 400);
+  };
 
   //添加自动播放
   RoundSlideImg.prototype.autoPlay = function () {
     var T = this;
 
     //处理bug：避免多次绑定setInterval事件
-    if(T.timmer) {
+    if (T.timmer) {
       clearInterval(T.timmer);
     }
 
     T.timmer = setInterval(function () {
       T.goNext();
     }, T.defs.sepTime);
-  }
+  };
 
   //绑定事件
   RoundSlideImg.prototype.bindClick = function () {
@@ -140,16 +142,16 @@
         clearInterval(T.timmer);
       }).on('mouseleave', function () {
         T.autoPlay();
-      })
+      });
     }
-  }
+  };
 
   //当窗口大小修改时重新计算第一第二第三张图片展示时距离左侧的位置
   RoundSlideImg.prototype.updateSlideOffsetArr = function () {
     var T = this;
     var arr = T.getSlideOffsetArr($(window).width());
     return arr;
-  }
+  };
 
   return RoundSlideImg;
 }));

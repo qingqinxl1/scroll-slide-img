@@ -1,6 +1,6 @@
 {
   "name": "@cnpm/round-slide-img",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "图片轮播，适应屏幕宽度",
   "main": "index.js",
   "scripts": {
