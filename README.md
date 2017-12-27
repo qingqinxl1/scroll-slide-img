@@ -1,5 +1,7 @@
 ## 图片轮播使用说明
 
+![图片轮播](http://p1lj739vz.bkt.clouddn.com/round-slide-img/default.png)
+
 ### 依赖 jQuery 1.9.1+
 
 ## 引入方式
