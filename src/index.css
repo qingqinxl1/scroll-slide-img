@@ -1,0 +1,19 @@
+html,body,h2{margin:0;padding:0;}
+a{text-decoration: none;}
+/*焦点图*/
+.auto_focus_head{margin-top:15px;position:relative;width:100%;min-width:1000px; overflow:hidden; z-index:8;}
+.auto_focus_head .scroll_bd{width:100%;overflow:hidden}
+.auto_focus_head .fh_panel{width:1170px;overflow:hidden;float:left;padding:0 7px; position:relative; z-index:9}
+.auto_focus_head .fh_panel img { width:1170px; height:365px;}
+.auto_focus_head .scroll_in_cnt{width:9999px}
+.auto_focus_head .scroll_btn{cursor:pointer;display:none;position:absolute;width:59px;height:59px;overflow:hidden;text-align:center;line-height:59px;top:50%;margin-top:-40px;font-size:0;z-index:999}
+.auto_focus_head .scroll_btn:hover{background-color:#B4B4B4;text-decoration:none;color:#fff}
+.auto_focus_head .scroll_next{right:50%; margin-right:-670px; background:url(../dist/mlzhongguo_baike_ico.png) -58px 0 no-repeat;}
+.auto_focus_head .scroll_prev{left:50%;  margin-left:-670px;  background:url(../dist/mlzhongguo_baike_ico.png) 1px 0 no-repeat;}
+.auto_focus_head .fh_layer{position:absolute;top:0;width:50%;height:100%;background-color:#fefefe;z-index:998;opacity:.8;filter:alpha(opacity=80); cursor:pointer;}
+.auto_focus_head .l_fh_layer{left:0;margin-left:-590px}
+.auto_focus_head .r_fh_layer{right:0;margin-right:-590px}
+.fh_panel_title { position:absolute; left:7px; bottom:0; z-index:10; width:1170px; height:104px; background-color:rgba(0,0,0,.6);}
+.fh_panel_title h2 { font-size:26px; line-height:28px; color:#fff; padding:20px 0 0 28px;}
+.fh_panel_title h2 a { color: #fff;}
+.fh_panel_title p { font-size:16px; line-height:22px; color:#fff; padding:5px 0 0 28px;}

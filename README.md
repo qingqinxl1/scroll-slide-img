@@ -3,6 +3,8 @@
 ![图片轮播](http://p1lj739vz.bkt.clouddn.com/round-slide-img/default.png)
 
 ### 依赖 jQuery 1.9.1+
+### js压缩使用uglifyjs，建议全局安装uglifyjs
+`npm install uglify-js -g`
 
 ## 引入方式
 
